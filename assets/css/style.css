@@ -1,0 +1,370 @@
+/* Mockup de Estilo para el Proyecto de Diseño Web */
+/* https://www.figma.com/design/Ksje1o4QD5K9j2SNL6DTMr/One-Page-Matias?node-id=0-1&p=f&t=nuhTW00jI13wPoOy-0 */
+
+/* Ajusta la Posición Según sea Necesario z-index */
+/* Aumenta el Espacio Entre los Enlaces de Navegación: gap */
+
+/* --- Reset Global --- */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FFFADC;
+    font-family: 'Golos Text', sans-serif;
+    color: #000000;
+    line-height: 1.5;
+    scroll-behavior: smooth; 
+}
+
+/* --- Componentes Tipográficos Generales --- */
+h1, h2, h3, .logotipo {
+    font-family: 'Gelica', serif;
+    font-weight: 700; 
+}
+
+/* --- Cabecera / Navegación --- */
+.cabecera {
+    background-color: #FFFADC;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 3px solid black; 
+}
+
+.logotipo {
+    font-size: 2.2rem;
+    letter-spacing: -0.03em;
+}
+
+.enlaces-navegacion {
+    list-style: none;
+    display: flex;
+    gap: 2.5rem;
+}
+
+.enlaces-navegacion a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: opacity 0.2s ease;
+}
+
+.enlaces-navegacion a:hover {
+    opacity: 0.7;
+}
+
+/* --- Sección Portada --- */
+.portada {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5rem 10%;
+    min-height: calc(100vh - 90px);
+    gap: 4rem;
+}
+
+.contenido-portada {
+    flex: 1;
+    max-width: 600px;
+}
+
+.titulo-portada {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+
+    /* Efecto Sacado de la Biblioteca de Assets */
+    /* https://themeui.net/freebies/css/ */
+    /* Efecto de Texto Brillo Dinámico */
+
+    background: linear-gradient(45deg, black 30%, orange 50%, red 60%, purple 70%, blue 80%, black 90%);
+    background-size: 200% auto;
+    
+    /* Recorta el fondo para que solo se vea dentro de las letras */
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width: 0.9px;
+
+    /* Aplica la animación */
+    animation: brillo-texto 5s linear infinite;
+}
+
+    /* Animación del Efecto de Texto de la Librería de Assets */
+@keyframes brillo-texto {
+    0% {
+        background-position: 0% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
+}
+
+.texto-portada {
+    font-size: 1.15rem;
+    line-height: 1.55;
+    font-weight: 400;
+}
+
+/* --- Bloque Visual Portada --- */
+.visual-portada {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor-imagen {
+    position: relative;
+    width: 320px;
+    height: 350px;
+}
+
+.caja-sombra {
+    position: absolute;
+    top: 20px;
+    left: -20px;
+    width: 100%;
+    height: 100%;
+    background-color: #D3D3D3;
+    border-radius: 8px;
+    z-index: 1;
+}
+
+.caja-principal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    z-index: 2;
+    border: 3px solid black;
+}
+
+/* --- Destellos --- */
+.destello {
+    position: absolute;
+    z-index: 3;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 10 C50 40 60 50 90 50 C60 50 50 60 50 90 C50 60 40 50 10 50 C40 50 50 40 50 10 Z' fill='%23F3A92A' stroke='%23F3A92A' stroke-width='10' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.destello-grande {
+    width: 140px;
+    height: 140px;
+    bottom: -20px;
+    right: -70px;
+}
+
+.destello-pequeno {
+    width: 70px;
+    height: 70px;
+    bottom: -45px;
+    right: 25px;
+}
+
+/* --- Sección Nosotros --- */
+.seccion-nosotros {
+    background-color: orange;
+    padding: 6rem 10%;
+}
+
+.cuadricula-nosotros {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 4rem;
+}
+
+.cabecera-izquierda-nosotros {
+    grid-column: 1 / 2;
+    grid-row: 1;
+}
+
+.texto-izquierdo-nosotros {
+    grid-column: 1 / 2;
+    grid-row: 2;
+}
+
+.texto-derecho-nosotros {
+    grid-column: 2 / 3;
+    grid-row: 2; 
+}
+
+.contenedor-logo-duotone {
+    margin-bottom: 2.5rem;
+    width: 100%;
+    max-width: 480px; 
+}
+
+.espacio-logo {
+    width: 100%;
+    display: block;
+}
+
+.contenedor-logo-duotone img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.titulo-nosotros {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+}
+
+.texto-nosotros {
+    font-size: 1.15rem;
+    line-height: 1.55;
+    margin-bottom: 1.8rem;
+}
+
+.texto-nosotros strong {
+    font-weight: 700; 
+}
+
+.texto-destacado {
+    margin-bottom: 2.5rem;
+}
+
+/* --- Sección Servicios --- */
+.seccion-servicios {
+    background-color: #FFFADC; 
+    padding: 6rem 10%;
+}
+
+.titulo-servicios {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.cuadricula-servicios {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem; 
+    align-items: start;
+}
+
+.tarjeta-servicio {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 1.5rem; 
+    border: 2px solid transparent; 
+    border-radius: 16px; 
+    transition: all 0.3s ease; 
+    cursor: pointer;
+}
+
+    /* Efecto Sacado de la Biblioteca de Assets */
+    /* https://themeui.net/freebies/css/ */
+    /* Efectos Hover para Servicios */
+
+.tarjeta-servicio:hover {
+    border-color: #000000;
+    background-color: #FFFFFF;
+    transform: translateY(-10px);
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.05);
+}
+
+.tarjeta-servicio:hover .espacio-servicio {
+    transform: scale(1.03); 
+}
+
+.contenedor-imagen-servicio {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    border: 2px solid black;
+    border-radius: 8px;
+}
+
+.espacio-servicio {
+    width: 100%;
+    aspect-ratio: 4 / 3; 
+    background-color: #000000;
+    display: block;
+    transition: transform 0.3s ease; 
+}
+
+.titulo-tarjeta-servicio {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.texto-tarjeta-servicio {
+    font-size: 1.1rem;
+}
+
+/* --- Pie de Página --- */
+.pie-pagina {
+    background-color: #000000;
+    color: #FFFFFF; 
+    padding: 5rem 10% 2rem; 
+}
+
+.superior-pie {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 3rem;
+}
+
+.informacion-pie {
+    max-width: 500px;
+}
+
+.marca-pie {
+    font-size: 1.15rem;
+    margin-bottom: 1.5rem;
+}
+
+.descripcion-pie {
+    font-size: 1.15rem;
+    line-height: 1.55;
+    color: #FFFADC; 
+}
+
+.navegacion-pie ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.navegacion-pie a {
+    color: #FFFADC;
+    text-decoration: underline;
+    text-underline-offset: 4px; 
+    font-size: 1.15rem;
+    transition: opacity 0.2s ease;
+}
+
+.navegacion-pie a:hover {
+    opacity: 0.7;
+}
+
+.divisor-pie {
+    border: none;
+    border-top: 2px solid #FFFADC;
+    margin-bottom: 1.5rem;
+}
+
+.inferior-pie p {
+    font-size: 1.1rem;
+    color: #FFFADC;
+}
