@@ -245,6 +245,14 @@ h1, h2, h3, .logotipo {
 .seccion-servicios {
     background-color: #FFFADC; 
     padding: 6rem 10%;
+    /* Añade esta línea para que el cambio sea suave y no de golpe */
+    transition: filter 0.5s ease; 
+}
+
+/* Nueva clase que se activará cuando lleguemos al footer */
+.servicios-difuminados {
+    filter: blur(8px) brightness(0.6);
+    /* Puedes ajustar los px del blur o el 0.6 del brillo a tu gusto */
 }
 
 .titulo-servicios {

@@ -5,7 +5,7 @@
 <!-- Etiqueta para Incluir los Media Query  -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matias Portafolio</title>
-<!-- Tipografías sacadas de Google Fonts -->
+<!-- Tipografías Sacadas de Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;700&display=swap" rel="stylesheet">
@@ -38,7 +38,7 @@
                 <div class="contenedor-imagen">
                     <div class="caja-sombra"></div>
                     <img class="caja-principal" src="assets/images/matias-imagen.png" alt="Fotografía de Matias dizfrazado de duende con un fondo de color naranja y un destello en la esquina inferior derecha">
-<!-- Destellos preset sacado de internet -->
+<!-- Destellos "Preset" Sacado de Internet -->
                     <div class="destello destello-grande"></div>
                     <div class="destello destello-pequeno"></div>
                 </div>
@@ -50,7 +50,7 @@
                 
                 <div class="cabecera-izquierda-nosotros">
                     <div class="contenedor-logo-duotone">
-<!-- Imagen local -->
+<!-- Imagen Local -->
                         <img class="espacio-logo" src="assets/images/logo-duotone.png" alt="Logotipo de Duotone, una marca de diseño gráfico y branding estratégico">
                     </div>
                     <h2 class="titulo-nosotros">El Nacimiento de una Identidad</h2>
@@ -83,7 +83,7 @@
             <div class="cuadricula-servicios">
                 <article class="tarjeta-servicio">
                     <div class="contenedor-imagen-servicio">
-<!-- Imagen local -->
+<!-- Imagen Local -->
                         <img class="espacio-servicio" src="assets/images/servicio-accesibilidad.png" alt="Imagen representativa de accesibilidad, mostrando un icono de silla de ruedas y un símbolo de accesibilidad universal">
                     </div>
                     <h3 class="titulo-tarjeta-servicio">Accesibilidad</h3>
@@ -94,7 +94,7 @@
 
                 <article class="tarjeta-servicio">
                     <div class="contenedor-imagen-servicio">
-<!-- Imagen local -->
+<!-- Imagen Local -->
                         <img class="espacio-servicio" src="assets/images/servicio-maquetacion.png" alt="Imagen representativa de maquetación, mostrando un diseño de página con columnas y bloques de contenido">
                     </div>
                     <h3 class="titulo-tarjeta-servicio">Maquetación</h3>
@@ -105,7 +105,7 @@
 
                 <article class="tarjeta-servicio">
                     <div class="contenedor-imagen-servicio">
-<!-- Imagen local -->
+<!-- Imagen Local -->
                         <img class="espacio-servicio" src="assets/images/servicio-branding.png" alt="Imagen representativa de branding, mostrando un logotipo y elementos de diseño de marca">
                     </div>
                     <h3 class="titulo-tarjeta-servicio">Branding</h3>
@@ -116,7 +116,7 @@
             </div>
         </section>
     </main>
-<!-- Pie de página -->
+<!-- Pie de Página -->
     <footer class="pie-pagina">
         <div class="superior-pie">
             <div class="informacion-pie">
@@ -141,6 +141,25 @@
             <p>© 2026 DUOTONE. Santiago, Chile.</p>
         </div>
     </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const servicios = document.querySelector('.seccion-servicios');
+
+            window.addEventListener('scroll', function() {
+                // Calculamos la altura total de la página
+                const alturaTotal = document.documentElement.scrollHeight;
+                // Calculamos en qué píxel se encuentra el límite inferior de tu pantalla
+                const posicionActual = window.innerHeight + window.scrollY;
+
+                // Si la posición actual es igual o mayor a la altura total (con 5px de tolerancia por si hay decimales)
+                if (posicionActual >= alturaTotal - 5) {
+                    servicios.classList.add('servicios-difuminados');
+                } else {
+                    servicios.classList.remove('servicios-difuminados');
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
