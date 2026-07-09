@@ -368,3 +368,125 @@ h1, h2, h3, .logotipo {
     font-size: 1.1rem;
     color: #FFFADC;
 }
+
+/* --- Media Query para Celular 576px-767px --- */
+/* --- Al no Desarrollar un Query Especifico para Cada Dispositivo, se Desarrolla una Diagramación que Abarque Cantidad de px --- */
+/* --- Configuraciones testeadas en Microsoft Edge en Modo Responsive (Medidas Ipad) y Galaxy s20 Ultra --- */
+/* --- Inestigación Aplicada Mediante GitHub --- */
+@media (max-width: 767px) {
+    .portada {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* El Tercer Valor (10rem) Modifica el Espacio Extra a la Sección */
+    padding: 5rem 10% 10rem; 
+    min-height: calc(100vh - 90px);
+    gap: 4rem;
+    }
+    
+    /* Logo del Nav Alineado */
+    .cabecera { 
+        padding: 1rem 5%; 
+        display: flex;
+        flex-direction: row; 
+        justify-content: space-between;
+        align-items: center;
+    }
+    .logotipo { font-size: 1.3rem; } 
+    .enlaces-navegacion { gap: 0.8rem; }
+    .enlaces-navegacion a { font-size: 0.85rem; }
+
+    /* Alineación en una sola Columna */
+    .portada {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 2rem;
+        gap: 3rem;
+    }
+    
+    .contenido-portada {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .titulo-portada { 
+        font-size: 2.8rem; 
+        margin-bottom: 1.5rem; 
+    }
+    
+    .texto-portada { 
+        font-size: 1.1rem; 
+    }
+    
+    .visual-portada {
+        margin-top: 0;
+        /* Mantiene las Proporciones de la Imagen y el Destello */
+        transform: none; 
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    /* Reduce el Contenedor de la Imagen solo para que no se Desborde en Celulares muy Estrechos */
+    .contenedor-imagen {
+        width: 280px;
+        height: 300px;
+    }
+
+    /* Una Columna para Todo el Ancho Disponible */
+    .cuadricula-nosotros {
+        /* Mantiene Todo en una Columna a lo Largo de la Pantalla */
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .cabecera-izquierda-nosotros,
+    .texto-izquierdo-nosotros,
+    .texto-derecho-nosotros {
+        /* Fija los Elementos a Usar el 100% del Ancho */
+        grid-column: 1 / -1;
+        grid-row: auto; 
+    }
+    
+    .contenedor-logo-duotone {
+        /* Centra el logo */
+        margin: 0 auto 2rem auto;
+    }
+    
+    .titulo-nosotros { 
+        font-size: 2rem; 
+        text-align: center; 
+    }
+    
+    .texto-nosotros { 
+        font-size: 1.1rem; 
+    }
+    
+    .texto-derecho-nosotros { 
+        margin-top: 0; 
+    }
+
+    /* Correción de Elementos Adaptados en 1 Columna */
+    .cuadricula-servicios {
+        grid-template-columns: 1fr;
+        gap: 2.5rem; 
+    }
+    
+    .espacio-servicio { 
+        aspect-ratio: 16 / 9; 
+    }
+
+    /* Apilación de los Enlaces del Footer */
+    .superior-pie {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .navegacion-pie ul { 
+        align-items: center; 
+    }
+    
+}
